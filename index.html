@@ -2,70 +2,92 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Salarial SV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-light">
 
-<div class="card">
-    <div class="header">
-        <h1>CALCULADORA SALARIAL SV</h1>
-        <p>Período: Mensual</p>
-    </div>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
 
-    <div class="content">
+            <div class="card shadow-lg border-0">
+                <div class="card-header text-center text-white header-custom">
+                    <h4 class="mb-0">CALCULADORA SALARIAL SV</h4>
+                    <small>Período: Mensual</small>
+                </div>
 
-        <div class="group">
-            <label>Salario Mensual ($)</label>
-            <input type="number" id="salario" placeholder="Ej: 550">
-            <button onclick="calcular()">Calcular</button>
-        </div>
+                <div class="card-body">
 
-        <div class="section">
-            <h3>Ingresos</h3>
-            <div class="row">
-                <span>Salario Bruto</span>
-                <span id="salarioBruto">$0.00</span>
+                    <!-- Input -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Salario Mensual ($)</label>
+                        <input type="number" id="salario" class="form-control" placeholder="Ej: 550">
+                    </div>
+
+                    <div class="d-grid mb-4">
+                        <button class="btn btn-success" onclick="calcular()">Calcular</button>
+                    </div>
+
+                    <!-- INGRESOS -->
+                    <h6 class="text-uppercase text-secondary">Ingresos</h6>
+                    <div class="d-flex justify-content-between">
+                        <span>Salario Bruto</span>
+                        <span id="salarioBruto">$0.00</span>
+                    </div>
+
+                    <hr>
+
+                    <!-- DEDUCCIONES -->
+                    <h6 class="text-uppercase text-secondary">Deducciones de Ley</h6>
+                    <div class="d-flex justify-content-between text-danger">
+                        <span>ISSS (3%)</span>
+                        <span id="isss">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between text-danger">
+                        <span>AFP (7.25%)</span>
+                        <span id="afp">$0.00</span>
+                    </div>
+
+                    <hr>
+
+                    <!-- BASE -->
+                    <h6 class="text-uppercase text-secondary">Base Imponible</h6>
+                    <div class="d-flex justify-content-between">
+                        <span>Renta Neta Gravable</span>
+                        <span id="renta">$0.00</span>
+                    </div>
+
+                    <hr>
+
+                    <!-- IMPUESTO -->
+                    <h6 class="text-uppercase text-secondary">Impuesto</h6>
+                    <div class="d-flex justify-content-between text-danger">
+                        <span>ISR Retenido</span>
+                        <span id="isr">$0.00</span>
+                    </div>
+
+                    <!-- TOTAL -->
+                    <div class="alert alert-success d-flex justify-content-between fw-bold fs-5 mt-4">
+                        <span>SALARIO LÍQUIDO A RECIBIR</span>
+                        <span id="liquido">$0.00</span>
+                    </div>
+
+                </div>
             </div>
-        </div>
 
-        <div class="section">
-            <h3>Deducciones de Ley</h3>
-            <div class="row">
-                <span>ISSS (3%)</span>
-                <span class="negativo" id="isss">$0.00</span>
-            </div>
-            <div class="row">
-                <span>AFP (7.25%)</span>
-                <span class="negativo" id="afp">$0.00</span>
-            </div>
         </div>
-
-        <div class="section">
-            <h3>Base Imponible</h3>
-            <div class="row">
-                <span>Renta Neta Gravable</span>
-                <span id="renta">$0.00</span>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Impuesto</h3>
-            <div class="row">
-                <span>ISR Retenido</span>
-                <span class="negativo" id="isr">$0.00</span>
-            </div>
-        </div>
-
-        <div class="total">
-            <span>SALARIO LÍQUIDO A RECIBIR</span>
-            <span id="liquido">$0.00</span>
-        </div>
-
     </div>
 </div>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
