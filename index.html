@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial SV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <h1>CALCULADORA SALARIAL SV</h1>
+        <p>Período: Mensual</p>
+    </div>
+
+    <div class="content">
+
+        <div class="group">
+            <label>Salario Mensual ($)</label>
+            <input type="number" id="salario" placeholder="Ej: 550">
+            <button onclick="calcular()">Calcular</button>
+        </div>
+
+        <div class="section">
+            <h3>Ingresos</h3>
+            <div class="row">
+                <span>Salario Bruto</span>
+                <span id="salarioBruto">$0.00</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Deducciones de Ley</h3>
+            <div class="row">
+                <span>ISSS (3%)</span>
+                <span class="negativo" id="isss">$0.00</span>
+            </div>
+            <div class="row">
+                <span>AFP (7.25%)</span>
+                <span class="negativo" id="afp">$0.00</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Base Imponible</h3>
+            <div class="row">
+                <span>Renta Neta Gravable</span>
+                <span id="renta">$0.00</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Impuesto</h3>
+            <div class="row">
+                <span>ISR Retenido</span>
+                <span class="negativo" id="isr">$0.00</span>
+            </div>
+        </div>
+
+        <div class="total">
+            <span>SALARIO LÍQUIDO A RECIBIR</span>
+            <span id="liquido">$0.00</span>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
